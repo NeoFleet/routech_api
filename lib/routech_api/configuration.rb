@@ -6,8 +6,8 @@ require 'rails'
 module RoutechApi
   # Configuration class
   class Configuration
-    attr_accessor :url, :logger, :api_key
-    attr_reader :log_level, :verify_ssl_certs
+    attr_accessor :url, :logger, :api_key, :ssl
+    attr_reader :log_level
 
     def log_level=(val)
       case val
