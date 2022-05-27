@@ -22,6 +22,10 @@ module RoutechApi
       response_code.between?(200, 299)
     end
 
+    def deleted?
+      response_code == 204
+    end
+
     def body
       formatted_response_body = valid_json?(response_body) ? JSON.parse(response_body) : response_body
 
