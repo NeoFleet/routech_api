@@ -25,20 +25,20 @@ module RoutechApi
       @config = RoutechApi.configuration
     end
 
-    def get(endpoint:, authorization:)
-      request(method: :get, endpoint: endpoint, authorization: authorization)
+    def get(endpoint:)
+      request(method: :get, endpoint: endpoint)
     end
 
-    def post(endpoint:, authorization:, body: nil)
-      request(method: :post, endpoint: endpoint, body: body, authorization: authorization)
+    def post(endpoint:, body: nil)
+      request(method: :post, endpoint: endpoint, body: body)
     end
 
-    def delete(endpoint:, authorization:)
-      request(method: :delete, endpoint: endpoint, authorization: authorization)
+    def delete(endpoint:)
+      request(method: :delete, endpoint: endpoint)
     end
 
-    def put(endpoint:, authorization:)
-      request(method: :put, endpoint: endpoint, authorization: authorization)
+    def put(endpoint:, body: nil)
+      request(method: :put, endpoint: endpoint, body: body)
     end
 
     private
@@ -49,7 +49,7 @@ module RoutechApi
       url = URI(@config.url % endpoint)
 
       http = Net::HTTP.new(url.host, url.port)
-      http.use_ssl = true
+      http.use_ssl = @config.ssl
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
       http_method_class = HTTP_METHODS_CLASS[method]
@@ -62,7 +62,7 @@ module RoutechApi
       logger.info("Requesting #{method} #{url} with body: #{body}")
       response = http.request(request)
 
-      RoutechApi::HttpResponse.new(response, logger: logger)
+      RoutechApi::Response.new(response, logger: logger)
     end
   end
 end
