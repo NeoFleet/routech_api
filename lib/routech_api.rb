@@ -1,7 +1,6 @@
 require 'logger'
 
-require './lib/routech_api/configuration'
-Dir.glob(File.join(__dir__, 'lib', 'routech_api', '*.rb'), &method(:require))
+Dir.glob(File.join('./lib', 'routech_api', '*.rb'), &method(:require))
 
 module RoutechApi
   LEVEL_DEBUG = Logger::DEBUG
