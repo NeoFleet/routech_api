@@ -1,6 +1,6 @@
 # RoutechApi Ruby Library
 
-The RoutechApi Ruby library provides a convenient access to the Stripe API from
+The RoutechApi Ruby library provides a convenient access to the Routech API from
 applications written in the Ruby language.
 
 The library also provides other features. For example:
