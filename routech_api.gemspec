@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
     s.name        = 'routech_api'
-    s.version     = '0.1.0'
+    s.version     = '0.2.0'
     s.summary     = "Routech Api integration"
     s.description = "Simple Gem to connect to Routech Server and use Apis"
     s.authors     = ["Daniel Debrande Junior"]
