@@ -1,10 +1,10 @@
 require 'logger'
 
 # Base files
-Dir.glob(File.join('./lib', 'routech_api', '*.rb'), &method(:require))
+Dir.glob(File.join(__dir__, 'routech_api', '*.rb'), &method(:require))
 
 # Crud Files
-Dir.glob(File.join('./lib', 'routech_api', 'crud', '*.rb'), &method(:require))
+Dir.glob(File.join(__dir__, 'routech_api', 'crud', '*.rb'), &method(:require))
 
 module RoutechApi
   class NotFounded < StandardError; end
