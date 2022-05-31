@@ -21,6 +21,12 @@ want to use the package, just run:
 gem install routech-api
 ```
 
+In your terminal, run the code below inside your project to create config file of gem
+
+```sh
+rails g routech_api:install
+```
+
 ### Requirements
 
 - Ruby 2.3+.
@@ -35,7 +41,8 @@ compromised in transit and alter the code of gems fetched securely over https:
 source 'https://rubygems.org'
 
 gem 'rails'
-gem 'routech-api'
+gem 'routech_api', git: 'git://github.com/NeoFleet/routech_api.git'
+
 ```
 
 ## Usage
