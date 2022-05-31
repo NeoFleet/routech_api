@@ -41,7 +41,7 @@ compromised in transit and alter the code of gems fetched securely over https:
 source 'https://rubygems.org'
 
 gem 'rails'
-gem 'routech_api', git: 'git://github.com/NeoFleet/routech_api.git'
+gem 'routech_api', git: 'https://github.com/NeoFleet/routech_api.git'
 
 ```
 
